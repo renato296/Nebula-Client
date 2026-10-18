@@ -1,4 +1,5 @@
-package nebula.client;
+
+package br.nebula.client;
 
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -13,8 +14,12 @@ public class NebulaKeybinds {
             "key.categories.nebula"
         );
 
+    private static boolean registered = false;
+
     public static void register() {
-        ClientRegistry.registerKeyBinding(EDIT_KEY);
+        if (!registered) {
+            ClientRegistry.registerKeyBinding(EDIT_KEY);
+            registered = true;
+        }
     }
 }
-
