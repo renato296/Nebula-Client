@@ -1,0 +1,12 @@
+
+[
+  {
+    "modid": "nebulaclient",
+    "name": "Nebula Client",
+    "description": "Nebula Client para Minecraft Java 1.8.8",
+    "version": "0.1.0",
+    "mcversion": "1.8.8",
+    "authorList": ["Nebula Team"],
+    "clientSideOnly": true
+  }
+]
