@@ -14,12 +14,21 @@ public class NebulaKeybinds {
             "key.categories.nebula"
         );
 
+    public static final KeyBinding CLICK_GUI_KEY =
+        new KeyBinding(
+            "key.nebula.clickgui",
+            Keyboard.KEY_RSHIFT,
+            "key.categories.nebula"
+        );
+
     private static boolean registered = false;
 
     public static void register() {
         if (!registered) {
             ClientRegistry.registerKeyBinding(EDIT_KEY);
+            ClientRegistry.registerKeyBinding(CLICK_GUI_KEY);
             registered = true;
         }
     }
 }
+
