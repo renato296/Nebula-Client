@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 @Mod(
     modid = "nebulaclient",
     name = "Nebula Client",
-    version = "0.1.0",
+    version = "0.2.0",
     clientSideOnly = true
 )
 public class NebulaClient {
@@ -21,6 +21,8 @@ public class NebulaClient {
     public void init(
         net.minecraftforge.fml.common.event.FMLInitializationEvent event
     ) {
+        NebulaConfig.load();
+
         MinecraftForge.EVENT_BUS.register(this);
         NebulaKeybinds.register();
     }
@@ -45,9 +47,15 @@ public class NebulaClient {
             return;
         }
 
-        if (mc.currentScreen == null
-                && NebulaKeybinds.EDIT_KEY.isPressed()) {
-            mc.displayGuiScreen(new NebulaEditorScreen());
+        if (mc.currentScreen == null) {
+            if (NebulaKeybinds.EDIT_KEY.isPressed()) {
+                mc.displayGuiScreen(new NebulaEditorScreen());
+                return;
+            }
+
+            if (NebulaKeybinds.CLICK_GUI_KEY.isPressed()) {
+                mc.displayGuiScreen(new NebulaClickGUI());
+            }
         }
     }
 }
