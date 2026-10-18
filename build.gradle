@@ -25,3 +25,18 @@ minecraft {
     mappings = 'stable_18'
     runDir = 'run'
 }
+src/main/java/
+└── br/nebula/client/
+    ├── config/
+    │   └── NebulaConfig.java
+    ├── gui/
+    │   ├── ClickGuiScreen.java
+    │   └── ChatSettingsScreen.java
+    ├── module/
+    │   ├── Module.java
+    │   ├── ModuleManager.java
+    │   ├── ChatControlModule.java
+    │   └── HudModule.java
+    └── hud/
+        ├── HudRenderer.java
+        └── HudEditorScreen.java
